@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.wrox.com.br/services" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://www.wrox.com.br/services" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.wrox.com.br/services">
+      <s:element name="SetAppState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAppStateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAppState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppStateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="delay" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppSettingsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </types>
+  <message name="SetAppStateSoapIn">
+    <part name="parameters" element="s0:SetAppState" />
+  </message>
+  <message name="SetAppStateSoapOut">
+    <part name="parameters" element="s0:SetAppStateResponse" />
+  </message>
+  <message name="GetAppStateSoapIn">
+    <part name="parameters" element="s0:GetAppState" />
+  </message>
+  <message name="GetAppStateSoapOut">
+    <part name="parameters" element="s0:GetAppStateResponse" />
+  </message>
+  <message name="GetAppSettingsSoapIn">
+    <part name="parameters" element="s0:GetAppSettings" />
+  </message>
+  <message name="GetAppSettingsSoapOut">
+    <part name="parameters" element="s0:GetAppSettingsResponse" />
+  </message>
+  <message name="SetAppStateHttpGetIn">
+    <part name="key" type="s:string" />
+    <part name="value" type="s:string" />
+  </message>
+  <message name="SetAppStateHttpGetOut" />
+  <message name="GetAppStateHttpGetIn">
+    <part name="key" type="s:string" />
+  </message>
+  <message name="GetAppStateHttpGetOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="GetAppSettingsHttpGetIn">
+    <part name="key" type="s:string" />
+    <part name="delay" type="s:string" />
+  </message>
+  <message name="GetAppSettingsHttpGetOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="SetAppStateHttpPostIn">
+    <part name="key" type="s:string" />
+    <part name="value" type="s:string" />
+  </message>
+  <message name="SetAppStateHttpPostOut" />
+  <message name="GetAppStateHttpPostIn">
+    <part name="key" type="s:string" />
+  </message>
+  <message name="GetAppStateHttpPostOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="GetAppSettingsHttpPostIn">
+    <part name="key" type="s:string" />
+    <part name="delay" type="s:string" />
+  </message>
+  <message name="GetAppSettingsHttpPostOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <portType name="AppServiceSoap">
+    <operation name="SetAppState">
+      <input message="s0:SetAppStateSoapIn" />
+      <output message="s0:SetAppStateSoapOut" />
+    </operation>
+    <operation name="GetAppState">
+      <input message="s0:GetAppStateSoapIn" />
+      <output message="s0:GetAppStateSoapOut" />
+    </operation>
+    <operation name="GetAppSettings">
+      <input message="s0:GetAppSettingsSoapIn" />
+      <output message="s0:GetAppSettingsSoapOut" />
+    </operation>
+  </portType>
+  <portType name="AppServiceHttpGet">
+    <operation name="SetAppState">
+      <input message="s0:SetAppStateHttpGetIn" />
+      <output message="s0:SetAppStateHttpGetOut" />
+    </operation>
+    <operation name="GetAppState">
+      <input message="s0:GetAppStateHttpGetIn" />
+      <output message="s0:GetAppStateHttpGetOut" />
+    </operation>
+    <operation name="GetAppSettings">
+      <input message="s0:GetAppSettingsHttpGetIn" />
+      <output message="s0:GetAppSettingsHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="AppServiceHttpPost">
+    <operation name="SetAppState">
+      <input message="s0:SetAppStateHttpPostIn" />
+      <output message="s0:SetAppStateHttpPostOut" />
+    </operation>
+    <operation name="GetAppState">
+      <input message="s0:GetAppStateHttpPostIn" />
+      <output message="s0:GetAppStateHttpPostOut" />
+    </operation>
+    <operation name="GetAppSettings">
+      <input message="s0:GetAppSettingsHttpPostIn" />
+      <output message="s0:GetAppSettingsHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="AppServiceSoap" type="s0:AppServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="SetAppState">
+      <soap:operation soapAction="http://www.wrox.com.br/services/SetAppState" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAppState">
+      <soap:operation soapAction="http://www.wrox.com.br/services/GetAppState" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAppSettings">
+      <soap:operation soapAction="http://www.wrox.com.br/services/GetAppSettings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="AppServiceHttpGet" type="s0:AppServiceHttpGet">
+    <http:binding verb="GET" />
+    <operation name="SetAppState">
+      <http:operation location="/SetAppState" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output />
+    </operation>
+    <operation name="GetAppState">
+      <http:operation location="/GetAppState" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetAppSettings">
+      <http:operation location="/GetAppSettings" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="AppServiceHttpPost" type="s0:AppServiceHttpPost">
+    <http:binding verb="POST" />
+    <operation name="SetAppState">
+      <http:operation location="/SetAppState" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output />
+    </operation>
+    <operation name="GetAppState">
+      <http:operation location="/GetAppState" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetAppSettings">
+      <http:operation location="/GetAppSettings" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AppService">
+    <port name="AppServiceSoap" binding="s0:AppServiceSoap">
+      <soap:address location="http://localhost/ProWebServices/AppService.asmx" />
+    </port>
+    <port name="AppServiceHttpGet" binding="s0:AppServiceHttpGet">
+      <http:address location="http://localhost/ProWebServices/AppService.asmx" />
+    </port>
+    <port name="AppServiceHttpPost" binding="s0:AppServiceHttpPost">
+      <http:address location="http://localhost/ProWebServices/AppService.asmx" />
+    </port>
+  </service>
+</definitions>

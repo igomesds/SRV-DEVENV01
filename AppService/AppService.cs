@@ -31,7 +31,7 @@ public class AppService
 	}
 
 	[WebMethod]
-	public string GetAppSettings(string key)
+	public string GetAppSettings(string key, int delay)
 	{
 		return ConfigurationSettings.AppSettings[key];
 	}

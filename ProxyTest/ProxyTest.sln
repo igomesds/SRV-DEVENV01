@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyTest", "ProxyTest.csproj", "{A106A6A4-698E-4A55-807C-430D40D3A6D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A106A6A4-698E-4A55-807C-430D40D3A6D8}.Debug.ActiveCfg = Debug|.NET
+		{A106A6A4-698E-4A55-807C-430D40D3A6D8}.Debug.Build.0 = Debug|.NET
+		{A106A6A4-698E-4A55-807C-430D40D3A6D8}.Release.ActiveCfg = Release|.NET
+		{A106A6A4-698E-4A55-807C-430D40D3A6D8}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
