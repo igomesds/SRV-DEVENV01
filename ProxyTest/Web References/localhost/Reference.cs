@@ -53,10 +53,9 @@ namespace ProxyTest.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.wrox.com.br/services/GetAppState", RequestNamespace="http://www.wrox.com.br/services", ResponseNamespace="http://www.wrox.com.br/services", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string GetAppState(string key, int delay) {
+        public string GetAppState(string key) {
             object[] results = this.Invoke("GetAppState", new object[] {
-                        key, delay});
-			System.Threading.Thread.Sleep(delay);
+                        key});
             return ((string)(results[0]));
         }
         
@@ -78,6 +77,7 @@ namespace ProxyTest.localhost {
             object[] results = this.Invoke("GetAppSettings", new object[] {
                         key,
                         delay});
+			System.Threading.Thread.Sleep(delay);
             return ((string)(results[0]));
         }
         
@@ -86,6 +86,7 @@ namespace ProxyTest.localhost {
             return this.BeginInvoke("GetAppSettings", new object[] {
                         key,
                         delay}, callback, asyncState);
+			
         }
         
         /// <remarks/>
